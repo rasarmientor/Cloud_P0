@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+<h2>Borrado</h2>
+
+<form method="post">{% csrf_token %}
+    Esta seguro que desea borrar "{{ object }}" ?<br><br>
+    <input type="submit" value="Si, borrar" />
+</form>
+<button onclick="location.href='{% url 'eventos_cbv:lista_eventos_1' %}'">No, cancelar</button>
+
+{% endblock %}

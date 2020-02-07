@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+<h2>Formulario de eventos</h2>
+Diligencia la información en el formulario:
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enviar" />
+</form>
+<button onclick="location.href='{% url 'eventos_cbv:lista_eventos_1' %}'">Cancelar</button>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_template.html" %}
+{% block content %}
+<html>
+  <body>
+{% if user.is_authenticated %}
+  <b>
+  Bienvenido {{ user.email }}
+  </b>
+  <p><a href="{% url 'account_logout' %}">Cerrar sesion</a></p>
+{% else %}
+  <p><b>Aun no se encuentra registrado, que desea hacer?</b></p>
+  <a href="{% url 'account_login' %}">Iniciar sesion</a> |
+  <a href="{% url 'account_signup' %}">Registrarse</a>
+{% endif %}
+  </body>
+</html>
+<a href="{% url 'eventos_cbv:lista_eventos_1' %}">Eventos</a><br>
+{% endblock content %}
